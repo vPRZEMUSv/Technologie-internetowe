@@ -1,0 +1,261 @@
+:root {
+  --bg-color: rgb(252, 252, 252);
+  --font-color: rgb(15, 15, 15);
+  --color: rgb(240, 164, 0);
+  --color: rgb(240, 164, 0);
+  --light-grey: rgb(215, 215, 215);
+  --lighter-grey: rgb(245, 245, 245);
+  --border-size: 4px;
+}
+
+.dark-theme {
+  transition: 0.2s;
+  --bg-color: rgb(15, 15, 15);
+  --font-color: rgb(252, 252, 252);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  transition: 0.2s;
+  margin-inline: auto;
+  font-family: "Oswald", sans-serif;
+  background-color: var(--bg-color);
+}
+
+.settings-bar {
+  padding: 10px;
+}
+
+#settings {
+  list-style: none;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding-right: 20px;
+  gap: 15px;
+}
+
+#settings img {
+  height: 25px;
+  vertical-align: middle;
+}
+
+#dark-mode-toggle:hover {
+  cursor: pointer;
+}
+
+#gear-icon:hover {
+  cursor: pointer;
+  transition: 0.5s;
+  transform: rotate(90deg);
+}
+
+.up-arrow img,
+.down-arrow img {
+  transition: 0.2s;
+  height: 50px;
+  width: 50px;
+}
+
+.up-arrow img:hover,
+.down-arrow img:hover {
+  transform: scale(1.1);
+}
+
+.up-arrow {
+  position: fixed;
+  right: 2%;
+  top: 80px;
+}
+
+.down-arrow {
+  position: fixed;
+  right: 2%;
+  bottom: 80px;
+}
+
+h1 {
+  color: var(--font-color);
+}
+
+.up-navbar {
+  color: var(--font-color);
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-weight: 500;
+  font-size: 30px;
+}
+
+.navbar {
+  position: static;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+  transition: 0.2s;
+  font-size: 18px;
+}
+
+nav {
+  width: 55%;
+  max-width: 1200px;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 15px;
+}
+
+nav img {
+  height: 30px;
+  padding-right: 8px;
+  vertical-align: bottom;
+}
+
+.navbar nav a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--font-color);
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.active {
+  border-bottom: var(--border-size) solid var(--color);
+}
+
+.navbar nav a:not(.active) {
+  border-bottom: var(--border-size) solid var(--light-grey);
+}
+
+.navbar nav a:not(.active):hover {
+  border-bottom: var(--border-size) solid gray;
+}
+
+.navbar nav a:nth-child(2n + 1) {
+}
+
+.sub-title-box {
+  color: var(--font-color);
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.main {
+  width: 80%;
+  max-width: 1600px;
+  margin-inline: auto;
+}
+
+.ul-images {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.ul-images > li {
+  height: 300px;
+  cursor: zoom-in;
+}
+
+.ul-images li img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.ul-images > li {
+  flex-grow: 1;
+}
+
+.images-section:first-child {
+  margin-top: 0;
+  padding-top: 20px;
+}
+
+.images-section {
+  margin-top: 110px;
+  padding-top: 50px;
+}
+
+.section-title-box:first-child {
+  padding-bottom: 10px;
+}
+
+.section-title-box h2 {
+  color: var(--font-color);
+  padding-top: 20px;
+}
+
+/* Zoom images */
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  animation: ZoomImage 0.2s ease-in-out;
+  cursor: zoom-out;
+}
+
+@keyframes ZoomImage {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.modal img {
+  margin: auto;
+  max-height: 90%;
+  object-fit: cover;
+}
+
+.closeBtn::before {
+  content: url("close.svg");
+}
+
+.closeBtn {
+  color: rgba(255, 255, 255, 0.87);
+  position: absolute;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  top: 30px;
+  right: 100px;
+}
+
+.closeBtn:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  text-align: center;
+  margin-top: 200px;
+  background-color: rgb(5, 5, 5);
+  color: rgb(165, 165, 165);
+  padding: 10px;
+}
+
+.footer-text {
+}
